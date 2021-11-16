@@ -1,24 +1,12 @@
 package br.com.dominio;
 
-public class Curso {
-    private String titulo;
-    private String descricap;
+public class Curso extends Conteudo {
     private Integer cargaHoraria;
 
-    public String getTitulo() {
-        return titulo;
-    }
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDescricap() {
-        return descricap;
-    }
-
-    public void setDescricap(String descricap) {
-        this.descricap = descricap;
+    @Override
+    public double calculaXp() {
+        return XP_PADRAO * cargaHoraria;
     }
 
     public Integer getCargaHoraria() {
@@ -32,8 +20,8 @@ public class Curso {
     @Override
     public String toString() {
         return "Curso{" +
-                "titulo='" + titulo + '\'' +
-                ", descricap='" + descricap + '\'' +
+                "titulo='" + getTitulo() + '\'' +
+                ", descricap='" + getDescricao() + '\'' +
                 ", cargaHoraria='" + cargaHoraria + '\'' +
                 '}';
     }
